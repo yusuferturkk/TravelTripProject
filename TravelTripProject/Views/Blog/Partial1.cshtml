@@ -1,0 +1,8 @@
+﻿@model List<TravelTripProject.Models.Blogs>
+
+@foreach (var item in Model)
+{
+    <ul>
+        <li><a href="/Blog/BlogDetail/@item.Id/">@item.Title</a></li>
+    </ul>
+}

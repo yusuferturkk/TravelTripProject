@@ -1,0 +1,17 @@
+﻿@model List<TravelTripProject.Models.Blogs>
+
+@{ 
+    int count = 0;
+} 
+
+<div class="padding">
+    <h4>Son Yazdığım 10 Blog</h4>
+    <ul class="list list-pad">
+        @foreach (var item in Model)
+        {
+            count++;
+            <li class="list-bg"><span>@count</span><a href="/Blog/BlogDetail/@item.Id/">@item.Title</a></li>
+        }
+    </ul>
+    <a href="/Blog/Index/" class="link1">Tüm bloglarımı gör</a>
+</div>

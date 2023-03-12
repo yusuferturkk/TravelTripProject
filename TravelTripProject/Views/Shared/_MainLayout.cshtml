@@ -1,0 +1,69 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Tatil & Seyahat Bloğum</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="~/Templates/Travel-Trip/web/css/style.css" type="text/css" media="all" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="~/Templates/Travel-Trip/web/css/slider.css" rel="stylesheet" type="text/css" media="all" />
+    <script src="~/Templates/Travel-Trip/web/js/jquery.min.js"></script>
+    <script src="~/Templates/Travel-Trip/web/js/responsiveslides.min.js"></script>
+
+    <script>
+    // You can also use "$(window).load(function() {"
+    $(function () {
+      // Slideshow 1
+      $("#slider1").responsiveSlides({
+         auto: true,
+		 nav: true,
+		 speed: 500,
+		 namespace: "callbacks",
+      });
+    });
+    </script>
+</head>
+<body>
+    <div class="header">
+        <div class="wrap">
+            <div class="logo"><a href="/Default/Index/"><img src="~/Templates/Travel-Trip/web/images/logo.png" /></a></div>
+            <div class="con-right">
+                <div class="grid1-l-img">
+                    <img src="~/Templates/Travel-Trip/web/images/contact.png" alt="">
+                </div>
+                <div class="grid1-l-desc">
+                    <p>Telefon : +90 555 555 55 55</p>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="header-bottom">
+        <div class="wrap">
+            <ul id="nav">
+                <li><a href="/Default/Index/">Anasayfa</a></li>
+                <li><a class="hsubs" href="/Default/About/">Hakkımızda</a></li>
+                <li><a class="hsubs" href="/Blog/Index/">Blogum</a></li>
+                <li><a href="/Contact/Index/">İletişim</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class"content">
+        @RenderBody()
+    </div>
+
+    <div class="footer-bottom">
+        <div class="wrap">
+            <div class="copy">
+                <p>&copy; 2013 Easy-Trip. All Rights Reserved | Design by <a href="http://w3layouts.com">W3Layouts</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

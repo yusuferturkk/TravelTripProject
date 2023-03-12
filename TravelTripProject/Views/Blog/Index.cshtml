@@ -1,0 +1,83 @@
+﻿@model Tuple<List<TravelTripProject.Models.Blogs>, List<TravelTripProject.Models.Comments>>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Tatil & Seyahat Bloğum</title>
+    <link href="~/Templates/Blog-Theme/web/css/bootstrap.css" rel='stylesheet' type='text/css' />
+    <link href="~/Templates/Blog-Theme/web/css/style.css" rel='stylesheet' type='text/css' />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Personal Blog Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+	Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!----webfonts---->
+    <link href='http://fonts.googleapis.com/css?family=Oswald:100,400,300,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,300italic' rel='stylesheet' type='text/css'>
+    <!----//webfonts---->
+
+</head>
+<body>
+    <!---header---->
+    <div class="header">
+        <div class="container">
+            <div class="clearfix"></div>
+            <script>
+                $("span.menu").click(function () {
+                    $(".top-menu ul").slideToggle("slow", function () {
+                    });
+                });
+            </script>
+            <!---//End-top-nav---->
+        </div>
+    </div>
+    <!--/header-->
+    <div class="single">
+        <div class="container">
+            <div class="col-md-8 single-main">
+                @foreach (var blogs in Model.Item1)
+                {
+                    <div class="single-grid"    >
+                        <img src="@blogs.BlogImage" alt="" style="margin-bottom:20px;" />
+                        <a href="/Blog/BlogDetail/@blogs.Id/">@blogs.Title</a>
+                        <p>
+                            @blogs.Description.Substring(0, 300)
+                        </p>
+                        <a href="/Blog/BlogDetail/@blogs.Id/" class="btn btn-primary" style="float:right; margin-bottom:50px;">Devamını Oku >>></a>
+                    </div>
+                }
+                <div class="col-md-4 side-content">
+                    <div class="recent">
+                        <h3>SON BLOGLAR</h3>
+                        @foreach (var blogs in Model.Item1)
+                        {
+                            <ul>
+                                <li><a href="/Blog/BlogDetail/@blogs.Id/">@blogs.Title</a></li>
+                            </ul>
+                        }
+                    </div>
+                    <div class="comments">
+                        <h3>SON YORUMLAR</h3>
+                        @foreach (var comments in Model.Item2)
+                        {
+                            <ul>
+                                <li><a href="#">@comments.Comments1</a></li>
+                            </ul>
+                        }
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+</body>

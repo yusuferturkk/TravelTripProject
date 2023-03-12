@@ -1,0 +1,670 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5F88F0C6-2F23-49C0-8456-2A8BF192DCEF}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TravelTripProject</RootNamespace>
+    <AssemblyName>TravelTripProject</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44394</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=3.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.2.0.1\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.9.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.9\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.9\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\BlogController.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\DefaultController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\RegisterController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Abouts.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Addresses.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Admins.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Blogs.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Classes\About.cs" />
+    <Compile Include="Models\Classes\Address.cs" />
+    <Compile Include="Models\Classes\Admin.cs" />
+    <Compile Include="Models\Classes\Blog.cs" />
+    <Compile Include="Models\Classes\BlogComment.cs" />
+    <Compile Include="Models\Classes\Comment.cs" />
+    <Compile Include="Models\Classes\Contact.cs" />
+    <Compile Include="Models\Classes\Context.cs" />
+    <Compile Include="Models\Classes\HomePage.cs" />
+    <Compile Include="Models\Comments.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Contacts.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\C__MigrationHistory.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HomePages.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-grid.rtl.css" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css" />
+    <Content Include="Content\bootstrap-utilities.css" />
+    <Content Include="Content\bootstrap-utilities.min.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap.rtl.css" />
+    <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\PagedList.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Models\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.esm.js" />
+    <Content Include="Scripts\bootstrap.esm.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <EntityDeploy Include="Models\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
+    <None Include="Scripts\jquery-3.6.3.intellisense.js" />
+    <Content Include="Scripts\jquery-3.6.3.js" />
+    <Content Include="Scripts\jquery-3.6.3.min.js" />
+    <Content Include="Scripts\jquery-3.6.3.slim.js" />
+    <Content Include="Scripts\jquery-3.6.3.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Templates\Blog-Theme\web\about.html" />
+    <Content Include="Templates\Blog-Theme\web\contact.html" />
+    <Content Include="Templates\Blog-Theme\web\css\bootstrap.css" />
+    <Content Include="Templates\Blog-Theme\web\css\style.css" />
+    <Content Include="Templates\Blog-Theme\web\images\avatar.png" />
+    <Content Include="Templates\Blog-Theme\web\images\icon3.png" />
+    <Content Include="Templates\Blog-Theme\web\images\logo.jpg" />
+    <Content Include="Templates\Blog-Theme\web\images\man.jpg" />
+    <Content Include="Templates\Blog-Theme\web\images\more.png" />
+    <Content Include="Templates\Blog-Theme\web\images\post1.jpg" />
+    <Content Include="Templates\Blog-Theme\web\images\post2.jpg" />
+    <Content Include="Templates\Blog-Theme\web\images\post3.jpg" />
+    <Content Include="Templates\Blog-Theme\web\images\search.png" />
+    <Content Include="Templates\Blog-Theme\web\index.html" />
+    <Content Include="Templates\Blog-Theme\web\js\easing.js" />
+    <Content Include="Templates\Blog-Theme\web\js\jquery.min.js" />
+    <Content Include="Templates\Blog-Theme\web\js\move-top.js" />
+    <Content Include="Templates\Blog-Theme\web\single.html" />
+    <Content Include="Templates\Blog-Theme\web\w3layouts-License.txt" />
+    <Content Include="Templates\Glance-Design\web\404.html" />
+    <Content Include="Templates\Glance-Design\web\500.html" />
+    <Content Include="Templates\Glance-Design\web\blank-page.html" />
+    <Content Include="Templates\Glance-Design\web\buttons.html" />
+    <Content Include="Templates\Glance-Design\web\charts.html" />
+    <Content Include="Templates\Glance-Design\web\compose.html" />
+    <Content Include="Templates\Glance-Design\web\css\animate.css" />
+    <Content Include="Templates\Glance-Design\web\css\bootstrap.css" />
+    <Content Include="Templates\Glance-Design\web\css\custom.css" />
+    <Content Include="Templates\Glance-Design\web\css\export.css" />
+    <Content Include="Templates\Glance-Design\web\css\font-awesome.css" />
+    <Content Include="Templates\Glance-Design\web\css\graph.css" />
+    <Content Include="Templates\Glance-Design\web\css\jqcandlestick.css" />
+    <Content Include="Templates\Glance-Design\web\css\monthly.css" />
+    <Content Include="Templates\Glance-Design\web\css\owl.carousel.css" />
+    <Content Include="Templates\Glance-Design\web\css\SidebarNav.min.css" />
+    <Content Include="Templates\Glance-Design\web\css\style.css" />
+    <Content Include="Templates\Glance-Design\web\fonts\fontawesome-webfont.svg" />
+    <Content Include="Templates\Glance-Design\web\forms.html" />
+    <Content Include="Templates\Glance-Design\web\general.html" />
+    <Content Include="Templates\Glance-Design\web\grids.html" />
+    <Content Include="Templates\Glance-Design\web\icons.html" />
+    <Content Include="Templates\Glance-Design\web\images\1.jpg" />
+    <Content Include="Templates\Glance-Design\web\images\2.jpg" />
+    <Content Include="Templates\Glance-Design\web\images\3.jpg" />
+    <Content Include="Templates\Glance-Design\web\images\4.jpg" />
+    <Content Include="Templates\Glance-Design\web\images\a.png" />
+    <Content Include="Templates\Glance-Design\web\images\i1.png" />
+    <Content Include="Templates\Glance-Design\web\images\i2.png" />
+    <Content Include="Templates\Glance-Design\web\images\i3.png" />
+    <Content Include="Templates\Glance-Design\web\images\i4.png" />
+    <Content Include="Templates\Glance-Design\web\images\img-sprite.png" />
+    <Content Include="Templates\Glance-Design\web\images\img1.png" />
+    <Content Include="Templates\Glance-Design\web\images\lock.png" />
+    <Content Include="Templates\Glance-Design\web\images\mail.png" />
+    <Content Include="Templates\Glance-Design\web\images\search-icon.png" />
+    <Content Include="Templates\Glance-Design\web\images\slider1.jpg" />
+    <Content Include="Templates\Glance-Design\web\images\slider2.jpg" />
+    <Content Include="Templates\Glance-Design\web\images\slider3.jpg" />
+    <Content Include="Templates\Glance-Design\web\images\slider4.jpg" />
+    <Content Include="Templates\Glance-Design\web\images\slider5.jpg" />
+    <Content Include="Templates\Glance-Design\web\images\slider6.jpg" />
+    <Content Include="Templates\Glance-Design\web\images\slider7.jpg" />
+    <Content Include="Templates\Glance-Design\web\images\tick.png" />
+    <Content Include="Templates\Glance-Design\web\images\user.png" />
+    <Content Include="Templates\Glance-Design\web\images\weather.jpg" />
+    <Content Include="Templates\Glance-Design\web\inbox.html" />
+    <Content Include="Templates\Glance-Design\web\index.html" />
+    <Content Include="Templates\Glance-Design\web\js\amcharts.js" />
+    <Content Include="Templates\Glance-Design\web\js\bootstrap.js" />
+    <Content Include="Templates\Glance-Design\web\js\Chart.bundle.js" />
+    <Content Include="Templates\Glance-Design\web\js\Chart.js" />
+    <Content Include="Templates\Glance-Design\web\js\Chart.min.js" />
+    <Content Include="Templates\Glance-Design\web\js\chartinator.js" />
+    <Content Include="Templates\Glance-Design\web\js\classie.js" />
+    <Content Include="Templates\Glance-Design\web\js\custom.js" />
+    <Content Include="Templates\Glance-Design\web\js\export.min.js" />
+    <Content Include="Templates\Glance-Design\web\js\images\dragIconRoundBig.svg" />
+    <Content Include="Templates\Glance-Design\web\js\images\lens.svg" />
+    <Content Include="Templates\Glance-Design\web\js\index.js" />
+    <Content Include="Templates\Glance-Design\web\js\index1.js" />
+    <Content Include="Templates\Glance-Design\web\js\index2.js" />
+    <Content Include="Templates\Glance-Design\web\js\jquery-1.11.1.min.js" />
+    <Content Include="Templates\Glance-Design\web\js\jquery.flot.js" />
+    <Content Include="Templates\Glance-Design\web\js\jquery.jqcandlestick.min.js" />
+    <Content Include="Templates\Glance-Design\web\js\jquery.nicescroll.js" />
+    <Content Include="Templates\Glance-Design\web\js\light.js" />
+    <Content Include="Templates\Glance-Design\web\js\metisMenu.min.js" />
+    <Content Include="Templates\Glance-Design\web\js\modernizr.custom.js" />
+    <Content Include="Templates\Glance-Design\web\js\monthly.js" />
+    <Content Include="Templates\Glance-Design\web\js\owl.carousel.js" />
+    <Content Include="Templates\Glance-Design\web\js\pie-chart.js" />
+    <Content Include="Templates\Glance-Design\web\js\scripts.js" />
+    <Content Include="Templates\Glance-Design\web\js\serial.js" />
+    <Content Include="Templates\Glance-Design\web\js\SidebarNav.min.js" />
+    <Content Include="Templates\Glance-Design\web\js\SimpleChart.js" />
+    <Content Include="Templates\Glance-Design\web\js\utils.js" />
+    <Content Include="Templates\Glance-Design\web\js\validator.min.js" />
+    <Content Include="Templates\Glance-Design\web\login.html" />
+    <Content Include="Templates\Glance-Design\web\media.html" />
+    <Content Include="Templates\Glance-Design\web\signup.html" />
+    <Content Include="Templates\Glance-Design\web\tables.html" />
+    <Content Include="Templates\Glance-Design\web\typography.html" />
+    <Content Include="Templates\Glance-Design\web\validation.html" />
+    <Content Include="Templates\Glance-Design\web\w3layouts-License.txt" />
+    <Content Include="Templates\Glance-Design\web\widgets.html" />
+    <Content Include="Templates\Login_v3\css\main.css" />
+    <Content Include="Templates\Login_v3\css\util.css" />
+    <Content Include="Templates\Login_v3\fonts\font-awesome-4.7.0\css\font-awesome.css" />
+    <Content Include="Templates\Login_v3\fonts\font-awesome-4.7.0\css\font-awesome.min.css" />
+    <Content Include="Templates\Login_v3\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="Templates\Login_v3\fonts\font-awesome-4.7.0\HELP-US-OUT.txt" />
+    <Content Include="Templates\Login_v3\fonts\iconic\css\material-design-iconic-font.css" />
+    <Content Include="Templates\Login_v3\fonts\iconic\css\material-design-iconic-font.min.css" />
+    <Content Include="Templates\Login_v3\fonts\iconic\fonts\Material-Design-Iconic-Font.svg" />
+    <Content Include="Templates\Login_v3\images\bg-01.jpg" />
+    <Content Include="Templates\Login_v3\images\icons\favicon.ico" />
+    <Content Include="Templates\Login_v3\index.html" />
+    <Content Include="Templates\Login_v3\js\main.js" />
+    <Content Include="Templates\Login_v3\vendor\animate\animate.css" />
+    <Content Include="Templates\Login_v3\vendor\animsition\css\animsition.css" />
+    <Content Include="Templates\Login_v3\vendor\animsition\css\animsition.min.css" />
+    <Content Include="Templates\Login_v3\vendor\animsition\js\animsition.js" />
+    <Content Include="Templates\Login_v3\vendor\animsition\js\animsition.min.js" />
+    <Content Include="Templates\Login_v3\vendor\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="Templates\Login_v3\vendor\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="Templates\Login_v3\vendor\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="Templates\Login_v3\vendor\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="Templates\Login_v3\vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="Templates\Login_v3\vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Templates\Login_v3\vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="Templates\Login_v3\vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Templates\Login_v3\vendor\bootstrap\js\popper.js" />
+    <Content Include="Templates\Login_v3\vendor\bootstrap\js\popper.min.js" />
+    <Content Include="Templates\Login_v3\vendor\bootstrap\js\tooltip.js" />
+    <Content Include="Templates\Login_v3\vendor\countdowntime\countdowntime.js" />
+    <Content Include="Templates\Login_v3\vendor\css-hamburgers\hamburgers.css" />
+    <Content Include="Templates\Login_v3\vendor\css-hamburgers\hamburgers.min.css" />
+    <Content Include="Templates\Login_v3\vendor\daterangepicker\daterangepicker.css" />
+    <Content Include="Templates\Login_v3\vendor\daterangepicker\daterangepicker.js" />
+    <Content Include="Templates\Login_v3\vendor\daterangepicker\moment.js" />
+    <Content Include="Templates\Login_v3\vendor\daterangepicker\moment.min.js" />
+    <Content Include="Templates\Login_v3\vendor\jquery\jquery-3.2.1.min.js" />
+    <Content Include="Templates\Login_v3\vendor\perfect-scrollbar\perfect-scrollbar.css" />
+    <Content Include="Templates\Login_v3\vendor\perfect-scrollbar\perfect-scrollbar.min.js" />
+    <Content Include="Templates\Login_v3\vendor\select2\select2.css" />
+    <Content Include="Templates\Login_v3\vendor\select2\select2.js" />
+    <Content Include="Templates\Login_v3\vendor\select2\select2.min.css" />
+    <Content Include="Templates\Login_v3\vendor\select2\select2.min.js" />
+    <Content Include="Templates\Transpolar-Starter\about.html" />
+    <Content Include="Templates\Transpolar-Starter\assets\css\style-starter.css" />
+    <Content Include="Templates\Transpolar-Starter\assets\images\ab.jpg" />
+    <Content Include="Templates\Transpolar-Starter\assets\images\banner1.jpg" />
+    <Content Include="Templates\Transpolar-Starter\assets\images\banner2.jpg" />
+    <Content Include="Templates\Transpolar-Starter\assets\images\banner3.jpg" />
+    <Content Include="Templates\Transpolar-Starter\assets\images\banner4.jpg" />
+    <Content Include="Templates\Transpolar-Starter\assets\images\banner5.jpg" />
+    <Content Include="Templates\Transpolar-Starter\assets\images\banner6.jpg" />
+    <Content Include="Templates\Transpolar-Starter\assets\images\down.png" />
+    <Content Include="Templates\Transpolar-Starter\assets\images\fb.png" />
+    <Content Include="Templates\Transpolar-Starter\assets\images\g1.jpg" />
+    <Content Include="Templates\Transpolar-Starter\assets\images\g2.jpg" />
+    <Content Include="Templates\Transpolar-Starter\assets\images\g3.jpg" />
+    <Content Include="Templates\Transpolar-Starter\assets\images\g4.jpg" />
+    <Content Include="Templates\Transpolar-Starter\assets\images\g5.jpg" />
+    <Content Include="Templates\Transpolar-Starter\assets\images\g6.jpg" />
+    <Content Include="Templates\Transpolar-Starter\assets\images\ins.png" />
+    <Content Include="Templates\Transpolar-Starter\assets\images\logo.png" />
+    <Content Include="Templates\Transpolar-Starter\assets\images\media-img.png" />
+    <Content Include="Templates\Transpolar-Starter\assets\images\team1.jpg" />
+    <Content Include="Templates\Transpolar-Starter\assets\images\team2.jpg" />
+    <Content Include="Templates\Transpolar-Starter\assets\images\team3.jpg" />
+    <Content Include="Templates\Transpolar-Starter\assets\images\team4.jpg" />
+    <Content Include="Templates\Transpolar-Starter\assets\images\tw.png" />
+    <Content Include="Templates\Transpolar-Starter\assets\js\bootstrap.min.js" />
+    <Content Include="Templates\Transpolar-Starter\assets\js\classie.js" />
+    <Content Include="Templates\Transpolar-Starter\assets\js\demo1.js" />
+    <Content Include="Templates\Transpolar-Starter\assets\js\jquery-1.9.1.min.js" />
+    <Content Include="Templates\Transpolar-Starter\assets\js\jquery-3.3.1.min.js" />
+    <Content Include="Templates\Transpolar-Starter\assets\js\modernizr.custom.js" />
+    <Content Include="Templates\Transpolar-Starter\assets\js\theme-change.js" />
+    <Content Include="Templates\Transpolar-Starter\assets\webfonts\fa-brands-400.svg" />
+    <Content Include="Templates\Transpolar-Starter\assets\webfonts\fa-regular-400.svg" />
+    <Content Include="Templates\Transpolar-Starter\assets\webfonts\fa-solid-900.svg" />
+    <Content Include="Templates\Transpolar-Starter\contact.html" />
+    <Content Include="Templates\Transpolar-Starter\index.html" />
+    <Content Include="Templates\Transpolar-Starter\services.html" />
+    <Content Include="Templates\Transpolar-Starter\starter-license-W3Layouts.txt" />
+    <Content Include="Templates\Travel-Trip\web\about.html" />
+    <Content Include="Templates\Travel-Trip\web\contact.html" />
+    <Content Include="Templates\Travel-Trip\web\css\slider.css" />
+    <Content Include="Templates\Travel-Trip\web\css\style.css" />
+    <Content Include="Templates\Travel-Trip\web\destinations.html" />
+    <Content Include="Templates\Travel-Trip\web\images\about_banner.jpg" />
+    <Content Include="Templates\Travel-Trip\web\images\arrows.png" />
+    <Content Include="Templates\Travel-Trip\web\images\but.png" />
+    <Content Include="Templates\Travel-Trip\web\images\contact.png" />
+    <Content Include="Templates\Travel-Trip\web\images\dest_banner.jpg" />
+    <Content Include="Templates\Travel-Trip\web\images\flight.png" />
+    <Content Include="Templates\Travel-Trip\web\images\glass.png" />
+    <Content Include="Templates\Travel-Trip\web\images\group.png" />
+    <Content Include="Templates\Travel-Trip\web\images\head_bg.jpg" />
+    <Content Include="Templates\Travel-Trip\web\images\head_bot.gif" />
+    <Content Include="Templates\Travel-Trip\web\images\img1.jpg" />
+    <Content Include="Templates\Travel-Trip\web\images\img2.jpg" />
+    <Content Include="Templates\Travel-Trip\web\images\img3.jpg" />
+    <Content Include="Templates\Travel-Trip\web\images\img4.jpg" />
+    <Content Include="Templates\Travel-Trip\web\images\key.png" />
+    <Content Include="Templates\Travel-Trip\web\images\link1-bg.gif" />
+    <Content Include="Templates\Travel-Trip\web\images\logo.png" />
+    <Content Include="Templates\Travel-Trip\web\images\pic.jpg" />
+    <Content Include="Templates\Travel-Trip\web\images\pic1.jpg" />
+    <Content Include="Templates\Travel-Trip\web\images\pic10.jpg" />
+    <Content Include="Templates\Travel-Trip\web\images\pic2.jpg" />
+    <Content Include="Templates\Travel-Trip\web\images\pic3.jpg" />
+    <Content Include="Templates\Travel-Trip\web\images\pic4.jpg" />
+    <Content Include="Templates\Travel-Trip\web\images\pic5.jpg" />
+    <Content Include="Templates\Travel-Trip\web\images\pic6.jpg" />
+    <Content Include="Templates\Travel-Trip\web\images\pic7.jpg" />
+    <Content Include="Templates\Travel-Trip\web\images\pic8.jpg" />
+    <Content Include="Templates\Travel-Trip\web\images\pic9.jpg" />
+    <Content Include="Templates\Travel-Trip\web\index.html" />
+    <Content Include="Templates\Travel-Trip\web\js\jquery.min.js" />
+    <Content Include="Templates\Travel-Trip\web\js\responsiveslides.min.js" />
+    <Content Include="Templates\Travel-Trip\web\w3layouts-License.txt" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\_MainLayout.cshtml" />
+    <Content Include="Views\Default\Index.cshtml" />
+    <Content Include="Views\Default\About.cshtml" />
+    <Content Include="Views\Blog\Index.cshtml" />
+    <Content Include="Views\Blog\BlogDetail.cshtml" />
+    <Content Include="Views\Default\Partial1.cshtml" />
+    <Content Include="Views\Default\Partial2.cshtml" />
+    <Content Include="Views\Default\PartialTop10.cshtml" />
+    <Content Include="Views\Default\Partial4.cshtml" />
+    <Content Include="Views\Shared\_AdminLayout.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Templates\Glance-Design\web\fonts\fontawesome-webfont.eot" />
+    <Content Include="Templates\Glance-Design\web\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Templates\Glance-Design\web\fonts\fontawesome-webfont.woff" />
+    <Content Include="Templates\Glance-Design\web\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Templates\Glance-Design\web\fonts\FontAwesome.otf" />
+    <Content Include="Templates\Glance-Design\web\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Templates\Glance-Design\web\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Templates\Glance-Design\web\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Templates\Glance-Design\web\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Views\Admin\AddBlog.cshtml" />
+    <Content Include="Views\Admin\UpdateBlog.cshtml" />
+    <Content Include="Views\Blog\DoComment.cshtml" />
+    <Content Include="Views\Admin\CommentList.cshtml" />
+    <Content Include="Views\Admin\UpdateComment.cshtml" />
+    <Content Include="Templates\Login_v3\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.eot" />
+    <Content Include="Templates\Login_v3\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Templates\Login_v3\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff" />
+    <Content Include="Templates\Login_v3\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Templates\Login_v3\fonts\font-awesome-4.7.0\fonts\FontAwesome.otf" />
+    <Content Include="Templates\Login_v3\fonts\font-awesome-4.7.0\less\animated.less" />
+    <Content Include="Templates\Login_v3\fonts\font-awesome-4.7.0\less\bordered-pulled.less" />
+    <Content Include="Templates\Login_v3\fonts\font-awesome-4.7.0\less\core.less" />
+    <Content Include="Templates\Login_v3\fonts\font-awesome-4.7.0\less\fixed-width.less" />
+    <Content Include="Templates\Login_v3\fonts\font-awesome-4.7.0\less\font-awesome.less" />
+    <Content Include="Templates\Login_v3\fonts\font-awesome-4.7.0\less\icons.less" />
+    <Content Include="Templates\Login_v3\fonts\font-awesome-4.7.0\less\larger.less" />
+    <Content Include="Templates\Login_v3\fonts\font-awesome-4.7.0\less\list.less" />
+    <Content Include="Templates\Login_v3\fonts\font-awesome-4.7.0\less\mixins.less" />
+    <Content Include="Templates\Login_v3\fonts\font-awesome-4.7.0\less\path.less" />
+    <Content Include="Templates\Login_v3\fonts\font-awesome-4.7.0\less\rotated-flipped.less" />
+    <Content Include="Templates\Login_v3\fonts\font-awesome-4.7.0\less\screen-reader.less" />
+    <Content Include="Templates\Login_v3\fonts\font-awesome-4.7.0\less\stacked.less" />
+    <Content Include="Templates\Login_v3\fonts\font-awesome-4.7.0\less\variables.less" />
+    <Content Include="Templates\Login_v3\fonts\font-awesome-4.7.0\scss\font-awesome.scss" />
+    <Content Include="Templates\Login_v3\fonts\font-awesome-4.7.0\scss\_animated.scss" />
+    <Content Include="Templates\Login_v3\fonts\font-awesome-4.7.0\scss\_bordered-pulled.scss" />
+    <Content Include="Templates\Login_v3\fonts\font-awesome-4.7.0\scss\_core.scss" />
+    <Content Include="Templates\Login_v3\fonts\font-awesome-4.7.0\scss\_fixed-width.scss" />
+    <Content Include="Templates\Login_v3\fonts\font-awesome-4.7.0\scss\_icons.scss" />
+    <Content Include="Templates\Login_v3\fonts\font-awesome-4.7.0\scss\_larger.scss" />
+    <Content Include="Templates\Login_v3\fonts\font-awesome-4.7.0\scss\_list.scss" />
+    <Content Include="Templates\Login_v3\fonts\font-awesome-4.7.0\scss\_mixins.scss" />
+    <Content Include="Templates\Login_v3\fonts\font-awesome-4.7.0\scss\_path.scss" />
+    <Content Include="Templates\Login_v3\fonts\font-awesome-4.7.0\scss\_rotated-flipped.scss" />
+    <Content Include="Templates\Login_v3\fonts\font-awesome-4.7.0\scss\_screen-reader.scss" />
+    <Content Include="Templates\Login_v3\fonts\font-awesome-4.7.0\scss\_stacked.scss" />
+    <Content Include="Templates\Login_v3\fonts\font-awesome-4.7.0\scss\_variables.scss" />
+    <Content Include="Templates\Login_v3\fonts\iconic\fonts\Material-Design-Iconic-Font.eot" />
+    <Content Include="Templates\Login_v3\fonts\iconic\fonts\Material-Design-Iconic-Font.ttf" />
+    <Content Include="Templates\Login_v3\fonts\iconic\fonts\Material-Design-Iconic-Font.woff" />
+    <Content Include="Templates\Login_v3\fonts\iconic\fonts\Material-Design-Iconic-Font.woff2" />
+    <Content Include="Templates\Login_v3\fonts\poppins\Poppins-Black.ttf" />
+    <Content Include="Templates\Login_v3\fonts\poppins\Poppins-BlackItalic.ttf" />
+    <Content Include="Templates\Login_v3\fonts\poppins\Poppins-Bold.ttf" />
+    <Content Include="Templates\Login_v3\fonts\poppins\Poppins-BoldItalic.ttf" />
+    <Content Include="Templates\Login_v3\fonts\poppins\Poppins-ExtraBold.ttf" />
+    <Content Include="Templates\Login_v3\fonts\poppins\Poppins-ExtraBoldItalic.ttf" />
+    <Content Include="Templates\Login_v3\fonts\poppins\Poppins-ExtraLight.ttf" />
+    <Content Include="Templates\Login_v3\fonts\poppins\Poppins-ExtraLightItalic.ttf" />
+    <Content Include="Templates\Login_v3\fonts\poppins\Poppins-Italic.ttf" />
+    <Content Include="Templates\Login_v3\fonts\poppins\Poppins-Light.ttf" />
+    <Content Include="Templates\Login_v3\fonts\poppins\Poppins-LightItalic.ttf" />
+    <Content Include="Templates\Login_v3\fonts\poppins\Poppins-Medium.ttf" />
+    <Content Include="Templates\Login_v3\fonts\poppins\Poppins-MediumItalic.ttf" />
+    <Content Include="Templates\Login_v3\fonts\poppins\Poppins-Regular.ttf" />
+    <Content Include="Templates\Login_v3\fonts\poppins\Poppins-SemiBold.ttf" />
+    <Content Include="Templates\Login_v3\fonts\poppins\Poppins-SemiBoldItalic.ttf" />
+    <Content Include="Templates\Login_v3\fonts\poppins\Poppins-Thin.ttf" />
+    <Content Include="Templates\Login_v3\fonts\poppins\Poppins-ThinItalic.ttf" />
+    <Content Include="Templates\Login_v3\vendor\bootstrap\css\bootstrap-grid.css.map" />
+    <Content Include="Templates\Login_v3\vendor\bootstrap\css\bootstrap-grid.min.css.map" />
+    <Content Include="Templates\Login_v3\vendor\bootstrap\css\bootstrap-reboot.css.map" />
+    <Content Include="Templates\Login_v3\vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
+    <Content Include="Templates\Login_v3\vendor\bootstrap\css\bootstrap.css.map" />
+    <Content Include="Templates\Login_v3\vendor\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Register\Index.cshtml" />
+    <Content Include="Views\Contact\Index.cshtml" />
+    <Content Include="Views\Blog\Partial1.cshtml" />
+    <Content Include="Views\Blog\Partial2.cshtml" />
+    <Content Include="Templates\Transpolar-Starter\assets\webfonts\fa-brands-400.eot" />
+    <Content Include="Templates\Transpolar-Starter\assets\webfonts\fa-brands-400.ttf" />
+    <Content Include="Templates\Transpolar-Starter\assets\webfonts\fa-brands-400.woff" />
+    <Content Include="Templates\Transpolar-Starter\assets\webfonts\fa-brands-400.woff2" />
+    <Content Include="Templates\Transpolar-Starter\assets\webfonts\fa-regular-400.eot" />
+    <Content Include="Templates\Transpolar-Starter\assets\webfonts\fa-regular-400.ttf" />
+    <Content Include="Templates\Transpolar-Starter\assets\webfonts\fa-regular-400.woff" />
+    <Content Include="Templates\Transpolar-Starter\assets\webfonts\fa-regular-400.woff2" />
+    <Content Include="Templates\Transpolar-Starter\assets\webfonts\fa-solid-900.eot" />
+    <Content Include="Templates\Transpolar-Starter\assets\webfonts\fa-solid-900.ttf" />
+    <Content Include="Templates\Transpolar-Starter\assets\webfonts\fa-solid-900.woff" />
+    <Content Include="Templates\Transpolar-Starter\assets\webfonts\fa-solid-900.woff2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.rtl.min.css.map" />
+    <Content Include="Content\bootstrap.rtl.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.css.map" />
+    <Content Include="Content\bootstrap-utilities.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.esm.min.js.map" />
+    <Content Include="Scripts\bootstrap.esm.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Scripts\jquery-3.6.3.slim.min.map" />
+    <Content Include="Scripts\jquery-3.6.3.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50590</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44394/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

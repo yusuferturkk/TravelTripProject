@@ -1,0 +1,30 @@
+﻿@model List<TravelTripProject.Models.Blogs>
+
+<div class="padding1">
+    <h4>En Beğendiğim Yerler</h4>
+    <div class="box-left">
+        @foreach (var item in Model.OrderBy(x => x.Id).Take(4))
+        {
+            <div class="bot-img">
+                <img src="@item.BlogImage" alt="" />
+            </div>
+            <div class="bot-desc">
+                <p>@item.Description.Substring(0, 100)</p>
+            </div>
+            <div class="clear"></div>
+        }
+
+    </div>
+    <div class="box1-left">
+        @foreach (var item in Model.OrderByDescending(x => x.Id).Take(4))
+        {
+            <div class="bot-img">
+                <img src="@item.BlogImage" alt="" />
+            </div>
+            <div class="bot-desc">
+                <p>@item.Description.Substring(0, 100)</p>
+            </div>
+            <div class="clear"></div>
+        }
+    </div>
+</div>

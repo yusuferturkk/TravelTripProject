@@ -1,0 +1,8 @@
+﻿@model List<TravelTripProject.Models.Comments>
+
+@foreach (var item in Model)
+{
+    <ul>
+        <li><a href="#">@item.UserName :</a> <a href="#">@item.Comments1.Substring(0, 15)...</a></li>
+    </ul>
+}

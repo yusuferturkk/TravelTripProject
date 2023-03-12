@@ -1,0 +1,29 @@
+﻿@model TravelTripProject.Models.Comments
+
+@{
+    ViewBag.Title = "UpdateComments";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>UpdateComments</h2>
+
+<form method="post" class="form-group">
+    @Html.HiddenFor(x => x.Id)
+    <label>Kullanıcı Adı</label>
+    @Html.TextBoxFor(x => x.UserName, new { @class = "form-control" })
+    <br />
+
+    <label>Mail</label>
+    @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+    <br />
+
+    <label>Yorum</label>
+    @Html.TextBoxFor(x => x.Comments1, new { @class = "form-control" })
+    <br />
+
+    <label>Blog</label>
+    @Html.TextBoxFor(x => x.BlogId, new { @class = "form-control" })
+    <br />
+
+    <button class="btn btn-primary">Yorumu Güncelle</button>
+</form>
